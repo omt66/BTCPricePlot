@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="omt.dataplot20210429.PrimaryController">
+   <children>
+      <Label text="Bitcoin Price ($)">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <LineChart fx:id="lineChart1">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <HBox alignment="CENTER" prefHeight="36.0" prefWidth="500.0" spacing="20.0">
+         <children>
+            <CheckBox fx:id="cbCircleDataPoints" mnemonicParsing="false" onAction="#handleCheckbox" selected="true" text="Circle Data Points" />
+            <Label fx:id="lblNofDays" text="# of Days" />
+         </children>
+      </HBox>
+      <Slider fx:id="slider1" max="730.0" min="7.0" onMouseReleased="#handleSliderChange" value="60.0" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
